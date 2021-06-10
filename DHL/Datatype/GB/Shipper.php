@@ -150,6 +150,11 @@ class Shipper extends Base
             'comment' => 'EORI number',
             'maxLength' => '20',
         ),
+        'RegistrationNumbers' => array(
+            'type' => 'RegistrationNumbers',
+            'required' => false,
+            'subobject' => true,
+        ),
         'Contact' => array(
             'type' => 'Contact',
             'required' => false,
