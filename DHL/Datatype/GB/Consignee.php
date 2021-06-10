@@ -22,7 +22,7 @@
  * @version     0.1
  */
 
-namespace DHL\Datatype\GB; 
+namespace DHL\Datatype\GB;
 use DHL\Datatype\Base;
 
 /**
@@ -47,71 +47,83 @@ class Consignee extends Base
             'subobject' => false,
             'comment' => 'Name of company / business',
             'minLength' => '0',
-        ), 
+        ),
         'SuiteDepartmentName' => array(
             'type' => 'SuiteDepartmentName',
             'required' => false,
             'subobject' => false,
             'comment' => 'SuiteDepartmentName',
-        ), 
+        ),
         'AddressLine' => array(
             'type' => 'string',
             'required' => true,
             'subobject' => false,
             'comment' => 'Address Line',
             'multivalues' => true,
-        ), 
+        ),
         'City' => array(
             'type' => 'City',
             'required' => false,
             'subobject' => false,
             'comment' => 'City name',
-        ), 
+        ),
         'Division' => array(
             'type' => 'Division',
             'required' => false,
             'subobject' => false,
             'comment' => 'Division (e.g. state, prefecture, etc.) name',
-        ), 
+        ),
         'DivisionCode' => array(
             'type' => 'DivisionCode',
             'required' => false,
             'subobject' => false,
             'comment' => 'Division (e.g. state, prefecture, etc.) code',
-        ), 
+        ),
         'PostalCode' => array(
             'type' => 'PostalCode',
             'required' => false,
             'subobject' => false,
             'comment' => 'Full postal/zip code for address',
-        ), 
+        ),
         'CountryCode' => array(
             'type' => 'CountryCode',
             'required' => false,
             'subobject' => false,
             'comment' => 'ISO country codes',
             'length' => '2',
-        ), 
+        ),
         'CountryName' => array(
             'type' => 'CountryName',
             'required' => false,
             'subobject' => false,
             'comment' => 'ISO country name',
-        ), 
+        ),
         'FederalTaxId' => array(
             'type' => '',
             'required' => false,
             'subobject' => false,
-        ), 
+        ),
         'StateTaxId' => array(
             'type' => '',
             'required' => false,
             'subobject' => false,
-        ), 
+        ),
+        'EORI_No' => array(
+            'type' => 'string',
+            'required' => false,
+            'subobject' => false,
+            'comment' => 'EORI number',
+            'maxLength' => '20',
+        ),
+        'RegistrationNumbers' => array(
+            'type' => 'RegistrationNumbers',
+            'required' => false,
+            'subobject' => true,
+        ),
         'Contact' => array(
             'type' => 'Contact',
             'required' => false,
             'subobject' => true,
-        ), 
+        ),
     );
 }
