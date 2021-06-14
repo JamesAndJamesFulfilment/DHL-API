@@ -53,13 +53,6 @@ class Label extends Base
             'comment' => 'LabelTemplate',
             'enumeration' => '8X4_A4_PDF,8X4_thermal,8X4_A4_TC_PDF,6X4_thermal,6X4_A4_PDF,8X4_CI_PDF,8X4_CI_thermal,8X4_RU_A4_PDF,6X4_PDF,8X4_PDF,8X4_CustBarCode_PDF,8X4_CustBarCode_thermal,8X4_CustBarCode_AdditionalInfo_PDF,8X4_CustBarCode_AdditionalInfo_thermal',
         ),
-        'CustomsInvoiceTemplate' => array(
-            'type' => 'CustomsInvoiceTemplate',
-            'required' => false,
-            'subobject' => false,
-            'comment' => 'CustomsInvoiceTemplate',
-            'enumeration' => 'COMMERCIAL_INVOICE_03,COMMERCIAL_INVOICE_04,COMMERCIAL_INVOICE_07,COMMERCIAL_INVOICE_P_10,COMMERCIAL_INVOICE_L_10',
-        ),
         'ReceiptTemplate' => array(
             'type' => 'ReceiptTemplate',
             'required' => false,
@@ -105,6 +98,13 @@ class Label extends Base
             'type' => 'CustomerBarcodeText',
             'required' => false,
             'subobject' => false,
+        ),
+        'CustomsInvoiceTemplate' => array(
+            'type' => 'CustomsInvoiceTemplate',
+            'required' => false,
+            'subobject' => false,
+            'comment' => 'CustomsInvoiceTemplate',
+            'enumeration' => 'COMMERCIAL_INVOICE_03,COMMERCIAL_INVOICE_04,COMMERCIAL_INVOICE_07,COMMERCIAL_INVOICE_P_10,COMMERCIAL_INVOICE_L_10',
         ),
     );
 }
