@@ -46,8 +46,7 @@ class RegistrationNumber extends Base
             'required' => false,
             'subobject' => false,
             'comment' => '',
-            'minInclusive' => '1',
-            'maxInclusive' => '35',
+            'maxLength' => '35',
         ),
         'NumberTypeCode' => array(
             'type' => 'NumberTypeCode',
