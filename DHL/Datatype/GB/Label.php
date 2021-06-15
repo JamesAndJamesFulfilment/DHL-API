@@ -99,5 +99,12 @@ class Label extends Base
             'required' => false,
             'subobject' => false,
         ),
+        'CustomsInvoiceTemplate' => array(
+            'type' => 'CustomsInvoiceTemplate',
+            'required' => false,
+            'subobject' => false,
+            'comment' => 'CustomsInvoiceTemplate',
+            'enumeration' => 'COMMERCIAL_INVOICE_03,COMMERCIAL_INVOICE_04,COMMERCIAL_INVOICE_07,COMMERCIAL_INVOICE_P_10,COMMERCIAL_INVOICE_L_10',
+        ),
     );
 }

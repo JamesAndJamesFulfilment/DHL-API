@@ -155,5 +155,11 @@ class Shipper extends Base
             'required' => false,
             'subobject' => true,
         ),
+        'RegistrationNumbers' => array(
+            'type' => 'RegistrationNumber',
+            'required' => false,
+            'subobject' => true,
+            'multivalues' => true,
+        ),
     );
 }
