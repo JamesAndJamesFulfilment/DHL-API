@@ -37,6 +37,12 @@ class RegistrationNumber extends Base
     protected $_isSubobject = true;
 
     /**
+     * Parent node name of the object
+     * @var string
+     */
+    protected $_xmlNodeName = 'RegistrationNumbers';
+
+    /**
      * Parameters of the datatype
      * @var array
      */
