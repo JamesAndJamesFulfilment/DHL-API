@@ -51,17 +51,24 @@ class Label extends Base
             'required' => false,
             'subobject' => false,
             'comment' => 'LabelTemplate',
-            'enumeration' => '8X4_A4_PDF,8X4_thermal,8X4_A4_TC_PDF,6X4_thermal,6X4_A4_PDF,8X4_CI_PDF,8X4_CI_thermal,8X4_RU_A4_PDF,6X4_PDF,8X4_PDF,8X4_CustBarCode_PDF,8X4_CustBarCode_thermal,8X4_CustBarCode_AdditionalInfo_PDF,8X4_CustBarCode_AdditionalInfo_thermal',
+            'enumeration' => '8X4_A4_PDF,8X4_thermal,8X4_A4_TC_PDF,6X4_thermal,6X4_A4_PDF,8X4_CI_PDF,8X4_CI_thermal,8X4_RU_A4_PDF,6X4_PDF,8X4_PDF,8X4_CustBarCode_PDF,8X4_CustBarCode_thermal,8X4_CustBarCode_AdditionalInfo_PDF,8X4_CustBarCode_AdditionalInfo_thermal,8X4_LBBX_PDF,8X4_LBBX_thermal',
         ),
         'ReceiptTemplate' => array(
             'type' => 'ReceiptTemplate',
             'required' => false,
             'subobject' => false,
         ),
-        'DocDetach' => array(
-            'type' => 'DocDetach',
+        'ShipmentReceiptWithLabels' => array(
+            'type' => 'ShipmentReceiptWithLabels',
             'required' => false,
             'subobject' => false,
+        ),
+        'CustomsInvoiceTemplate' => array(
+            'type' => 'CustomsInvoiceTemplate',
+            'required' => false,
+            'subobject' => false,
+            'comment' => 'CustomsInvoiceTemplate',
+            'enumeration' => 'COMMERCIAL_INVOICE_03,COMMERCIAL_INVOICE_04,COMMERCIAL_INVOICE_07,COMMERCIAL_INVOICE_P_10,COMMERCIAL_INVOICE_L_10',
         ),
         'Logo' => array(
             'type' => 'YesNo',
@@ -74,7 +81,7 @@ class Label extends Base
         'CustomerLogo' => array(
             'type' => 'CustomerLogo',
             'required' => false,
-            'subobject' => false,
+            'subobject' => true,
         ),
         'Resolution' => array(
             'type' => 'Resolution',
@@ -99,12 +106,15 @@ class Label extends Base
             'required' => false,
             'subobject' => false,
         ),
-        'CustomsInvoiceTemplate' => array(
-            'type' => 'CustomsInvoiceTemplate',
+        'QRCodeTemplate' => array(
+            'type' => 'QRCodeTemplate',
             'required' => false,
             'subobject' => false,
-            'comment' => 'CustomsInvoiceTemplate',
-            'enumeration' => 'COMMERCIAL_INVOICE_03,COMMERCIAL_INVOICE_04,COMMERCIAL_INVOICE_07,COMMERCIAL_INVOICE_P_10,COMMERCIAL_INVOICE_L_10',
+        ),
+        'QRCodeImageFormat' => array(
+            'type' => 'QRCodeImageFormat',
+            'required' => false,
+            'subobject' => false,
         ),
     );
 }

@@ -86,7 +86,7 @@ class ExportDeclaration extends Base
             'subobject' => false,
             'comment' => 'Export reason code (P:Permanent, T:Temporary, R:Re-Export)',
             'length' => '1',
-            'enumeration' => 'P,T,R',
+            'enumeration' => 'P,T,R,M,I,C,E,S,G,U,W,D,F',
         ),
         'SedNumber' => array(
             'type' => 'SEDNumber',
@@ -102,11 +102,6 @@ class ExportDeclaration extends Base
             'comment' => '',
             'length' => '1',
             'enumeration' => 'F,X,S,I',
-        ),
-        'MxStateCode' => array(
-            'type' => '',
-            'required' => false,
-            'subobject' => false,
         ),
         'InvoiceNumber' => array(
             'type' => 'InvoiceNumber',
@@ -128,10 +123,29 @@ class ExportDeclaration extends Base
             'required' => false,
             'subobject' => false,
         ),
-        'BillToAddressLine' => array(
-            'type' => 'BillToAddressLine',
+        'BillToAddressLine1' => array(
+            'type' => 'string',
+            'required' => true,
+            'subobject' => false,
+            'comment' => 'Address Line 1',
+            'minLength' => '1',
+            'maxLength' => '45',
+        ),
+        'BillToAddressLine2' => array(
+            'type' => 'string',
             'required' => false,
             'subobject' => false,
+            'comment' => 'Address Line 2',
+            'minLength' => '1',
+            'maxLength' => '45',
+        ),
+        'BillToAddressLine3' => array(
+            'type' => 'string',
+            'required' => false,
+            'subobject' => false,
+            'comment' => 'Address Line 3',
+            'minLength' => '1',
+            'maxLength' => '45',
         ),
         'BillToCity' => array(
             'type' => 'BillToCity',
@@ -153,6 +167,18 @@ class ExportDeclaration extends Base
             'required' => false,
             'subobject' => false,
         ),
+        'BillToStateName' => array(
+            'type' => 'Division',
+            'required' => false,
+            'subobject' => false,
+            'maxLength' => '35',
+        ),
+        'BillToCountryCode' => array(
+            'type' => 'CountryCode',
+            'required' => false,
+            'subobject' => false,
+            'length' => '2',
+        ),
         'BillToCountryName' => array(
             'type' => 'BillToCountryName',
             'required' => false,
@@ -173,30 +199,51 @@ class ExportDeclaration extends Base
             'required' => false,
             'subobject' => false,
         ),
-        'BillToFederalTaxID' => array(
-            'type' => 'BillToFederalTaxID',
+        'BillToStreetName' => array(
+            'type' => 'StreetName',
             'required' => false,
             'subobject' => false,
+            'minLength' => '1',
+            'maxLength' => '250',
+        ),
+        'BillToBuildingName' => array(
+            'type' => 'BuildingName',
+            'required' => false,
+            'subobject' => false,
+            'minLength' => '1',
+            'maxLength' => '50',
+        ),
+        'BillToStreetNumber' => array(
+            'type' => 'StreetNumber',
+            'required' => false,
+            'subobject' => false,
+            'minLength' => '1',
+            'maxLength' => '50',
+        ),
+        'BillToRegistrationNumbers' => array(
+            'type' => 'RegistrationNumber',
+            'required' => false,
+            'subobject' => true,
+            'multivalues' => true,
+        ),
+        'BillToBusinessPartyTypeCode' => array(
+            'type' => 'BusinessPartyTypeCode',
+            'required' => false,
+            'subobject' => false,
+            'minLength' => '2',
+            'maxLength' => '2',
+            'enumeration' => 'BU,DC,GV,OT,PR,RE',
         ),
         'Remarks' => array(
             'type' => 'Remarks',
             'required' => false,
             'subobject' => false,
         ),
-        'OtherCharges1' => array(
-            'type' => 'OtherCharges1',
+        'OtherCharges' => array(
+            'type' => 'OtherCharge',
             'required' => false,
-            'subobject' => false,
-        ),
-        'OtherCharges2' => array(
-            'type' => 'OtherCharges2',
-            'required' => false,
-            'subobject' => false,
-        ),
-        'OtherCharges3' => array(
-            'type' => 'OtherCharges3',
-            'required' => false,
-            'subobject' => false,
+            'subobject' => true,
+            'multivalues' => true,
         ),
         'DestinationPort' => array(
             'type' => 'DestinationPort',
@@ -208,8 +255,13 @@ class ExportDeclaration extends Base
             'required' => false,
             'subobject' => false,
         ),
-        'PayerGSTVAT' => array(
-            'type' => 'PayerGSTVAT',
+        'ReceiverReference' => array(
+            'type' => 'ReceiverReference',
+            'required' => false,
+            'subobject' => false,
+        ),
+        'ExporterCode' => array(
+            'type' => 'ExporterCode',
             'required' => false,
             'subobject' => false,
         ),
@@ -224,33 +276,17 @@ class ExportDeclaration extends Base
             'subobject' => false,
         ),
         'PackageMarks' => array(
-            'type' => 'PackageMarks',
-            'type' => 'PayerGSTVAT',
-            'required' => false,
-            'subobject' => false,
-        ),
-        'ReceiverReference' => array(
-            'type' => 'ReceiverReference',
-            'required' => false,
-            'subobject' => false,
-        ),
-        'ExporterCode' => array(
-            'type' => 'ExporterCode',
-            'required' => false,
-            'subobject' => false,
-        ),
-        'PackageMarks' => array(
-            'type' => 'PackageMarks',
+            'type' => 'string',
             'required' => false,
             'subobject' => false,
         ),
         'OtherRemarks2' => array(
-            'type' => 'OtherRemarks2',
+            'type' => 'string',
             'required' => false,
             'subobject' => false,
         ),
         'OtherRemarks3' => array(
-            'type' => 'OtherRemarks3',
+            'type' => 'string',
             'required' => false,
             'subobject' => false,
         ),
@@ -315,6 +351,58 @@ class ExportDeclaration extends Base
             'type' => 'ShipmentDocument',
             'required' => false,
             'subobject' => false,
+        ),
+        'InvoiceInstructions' => array(
+            'type' => 'InvoiceInstructions',
+            'required' => false,
+            'subobject' => false,
+            'maxLength' => '300',
+        ),
+        'CustomerDataTextEntries' => array(
+            'type' => 'CustomerDataTextEntry',
+            'required' => false,
+            'subobject' => true,
+            'multivalues' => true,
+        ),
+        'PlaceOfIncoterm' => array(
+            'type' => 'PlaceOfIncoterm',
+            'required' => false,
+            'subobject' => false,
+            'maxLength' => '256',
+        ),
+        'ShipmentPurpose' => array(
+            'type' => 'ShipmentPurpose',
+            'required' => false,
+            'subobject' => false,
+            'enumeration' => 'PERSONAL,COMMERCIAL',
+        ),
+        'CustomsDocuments' => array(
+            'type' => 'CustomsDocument',
+            'required' => false,
+            'subobject' => true,
+            'multivalues' => true,
+        ),
+        'InvoiceTotalNetWeight' => array(
+            'type' => 'Invoice_Weight',
+            'required' => false,
+            'subobject' => false,
+            'fractionDigits' => '3',
+            'minInclusive' => '0.000',
+            'maxInclusive' => '999999999999.999',
+        ),
+        'InvoiceTotalGrossWeight' => array(
+            'type' => 'Invoice_Weight',
+            'required' => false,
+            'subobject' => false,
+            'fractionDigits' => '3',
+            'minInclusive' => '0.000',
+            'maxInclusive' => '999999999999.999',
+        ),
+        'InvoiceReferences' => array(
+            'type' => 'InvoiceReference',
+            'required' => false,
+            'subobject' => true,
+            'multivalues' => true,
         ),
     );
 }

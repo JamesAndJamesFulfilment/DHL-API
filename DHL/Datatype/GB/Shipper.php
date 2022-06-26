@@ -46,7 +46,7 @@ class Shipper extends Base
             'required' => false,
             'subobject' => false,
             'comment' => 'Shipper\'s ID',
-            'maxLength' => '35',
+            'maxLength' => '30',
         ),
         'CompanyName' => array(
             'type' => 'CompanyNameValidator',
@@ -54,7 +54,7 @@ class Shipper extends Base
             'subobject' => false,
             'comment' => 'Name of company / business',
             'minLength' => '2',
-            'maxLength' => '60',
+            'maxLength' => '100',
         ),
         'SuiteDepartmentName' => array(
             'type' => 'SuiteDepartmentName',
@@ -70,11 +70,49 @@ class Shipper extends Base
             'comment' => 'DHL Account Number',
             'maxLength' => '12',
         ),
-        'AddressLine' => array(
+        'AddressLine1' => array(
             'type' => 'string',
             'required' => true,
             'subobject' => false,
-            'comment' => 'Address Line',
+            'comment' => 'Address Line 1',
+            'minLength' => '1',
+            'maxLength' => '45',
+        ),
+        'AddressLine2' => array(
+            'type' => 'string',
+            'required' => false,
+            'subobject' => false,
+            'comment' => 'Address Line 2',
+            'minLength' => '1',
+            'maxLength' => '45',
+        ),
+        'AddressLine3' => array(
+            'type' => 'string',
+            'required' => false,
+            'subobject' => false,
+            'comment' => 'Address Line 3',
+            'minLength' => '1',
+            'maxLength' => '45',
+        ),
+        'StreetName' => array(
+            'type' => 'string',
+            'required' => true,
+            'subobject' => false,
+            'comment' => 'Street Name',
+            'multivalues' => true,
+        ),
+        'BuildingName' => array(
+            'type' => 'string',
+            'required' => true,
+            'subobject' => false,
+            'comment' => 'Building Name',
+            'multivalues' => true,
+        ),
+        'StreetNumber' => array(
+            'type' => 'string',
+            'required' => true,
+            'subobject' => false,
+            'comment' => 'Street Number',
             'multivalues' => true,
         ),
         'City' => array(
@@ -133,23 +171,6 @@ class Shipper extends Base
             'comment' => 'ISO country name',
             'maxLength' => '35',
         ),
-        'FederalTaxId' => array(
-            'type' => '',
-            'required' => false,
-            'subobject' => false,
-        ),
-        'StateTaxId' => array(
-            'type' => '',
-            'required' => false,
-            'subobject' => false,
-        ),
-        'EORI_No' => array(
-            'type' => 'string',
-            'required' => false,
-            'subobject' => false,
-            'comment' => 'EORI number',
-            'maxLength' => '20',
-        ),
         'Contact' => array(
             'type' => 'Contact',
             'required' => false,
@@ -161,5 +182,17 @@ class Shipper extends Base
             'subobject' => true,
             'multivalues' => true,
         ),
+        'BusinessPartyTypeCode' => [
+            'type' => 'string',
+            'required' => false,
+            'subobject' => false,
+            'comment' => 'Possible Values:
+                - BU (business)
+                - DC (direct consumer)
+                - GV (government)
+                - OT (other)
+                - PR (private)
+                - RE (reseller)',
+        ],
     );
 }

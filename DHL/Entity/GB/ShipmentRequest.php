@@ -46,13 +46,13 @@ class ShipmentRequest extends Base
      * @var string
      * Service XSD
      */
-    protected $_serviceXSD = 'ShipmentRequest.xsd';
+    protected $_serviceXSD = 'ship-val-global-req-10.0.xsd';
 
     /**
      * @var string
      * The schema version
      */
-    protected $_schemaVersion = '6.2';
+    protected $_schemaVersion = '10.0';
 
     /**
      * @var string
@@ -85,24 +85,12 @@ class ShipmentRequest extends Base
             'required' => false,
             'subobject' => false,
         ),
-        'NewShipper' => array(
-            'type' => 'string',
-            'required' => false,
-            'subobject' => false,
-        ),
         'LanguageCode' => array(
             'type' => 'string',
             'required' => false,
             'subobject' => false,
             'comment' => 'ISO Language Code',
             'maxLength' => '2',
-        ),
-        'PiecesEnabled' => array(
-            'type' => 'string',
-            'required' => false,
-            'subobject' => false,
-            'comment' => 'Pieces Enabling Flag',
-            'enumeration' => 'Y,N',
         ),
         'Billing' => array(
             'type' => 'Billing',
@@ -211,13 +199,52 @@ class ShipmentRequest extends Base
             'required' => false,
             'subobject' => false,
         ),
+        'RequestQRCode' => array(
+            'type' => 'YesNo',
+            'required' => false,
+            'subobject' => false,
+            'length' => '1',
+            'enumeration' => 'Y,N',
+        ),
+        'RequestTransportLabel' => array(
+            'type' => 'YesNo',
+            'required' => false,
+            'subobject' => false,
+            'length' => '1',
+            'enumeration' => 'Y,N',
+        ),
         'Label' => array(
             'type' => 'Label',
             'required' => false,
             'subobject' => true,
         ),
+        'SinglePieceImage' => array(
+            'type' => 'YesNo',
+            'required' => false,
+            'subobject' => false,
+            'maxlength' => '1',
+            'enumeration' => 'Y,N',
+        ),
+        'ShipmentIdentificationNumber' => array(
+            'type' => 'AWBNumber',
+            'required' => false,
+            'subobject' => false,
+            'maxLength' => '10',
+        ),
+        'UseOwnShipmentIdentificationNumber' => array(
+            'type' => 'string',
+            'required' => false,
+            'subobject' => false,
+            'maxlength' => '1',
+            'enumeration' => 'Y,N',
+        ),
         'Importer' => array(
             'type' => 'Importer',
+            'required' => false,
+            'subobject' => true,
+        ),
+        'Exporter' => array(
+            'type' => 'Exporter',
             'required' => false,
             'subobject' => true,
         ),

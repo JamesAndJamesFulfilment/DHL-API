@@ -43,21 +43,21 @@ class RegistrationNumber extends Base
     protected $_params = array(
         'Number' => array(
             'type' => 'Number',
-            'required' => false,
+            'required' => true,
             'subobject' => false,
             'comment' => '',
             'maxLength' => '35',
         ),
         'NumberTypeCode' => array(
             'type' => 'NumberTypeCode',
-            'required' => false,
+            'required' => true,
             'subobject' => false,
             'comment' => 'NumberTypeCode',
             'enumeration' => 'SDT,VAT,FTZ,DAN,TAN,DTF,CNP,DUN,EIN,EOR,SSN,FED,STA',
         ),
         'NumberIssuerCountryCode' => array(
             'type' => 'NumberIssuerCountryCode',
-            'required' => false,
+            'required' => true,
             'subobject' => false,
             'comment' => 'ISO country codes',
             'length' => '2',

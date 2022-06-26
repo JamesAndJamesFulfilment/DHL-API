@@ -54,11 +54,49 @@ class Consignee extends Base
             'subobject' => false,
             'comment' => 'SuiteDepartmentName',
         ),
-        'AddressLine' => array(
+        'AddressLine1' => array(
             'type' => 'string',
             'required' => true,
             'subobject' => false,
-            'comment' => 'Address Line',
+            'comment' => 'Address Line 1',
+            'minLength' => '1',
+            'maxLength' => '45',
+        ),
+        'AddressLine2' => array(
+            'type' => 'string',
+            'required' => false,
+            'subobject' => false,
+            'comment' => 'Address Line 2',
+            'minLength' => '1',
+            'maxLength' => '45',
+        ),
+        'AddressLine3' => array(
+            'type' => 'string',
+            'required' => false,
+            'subobject' => false,
+            'comment' => 'Address Line 3',
+            'minLength' => '1',
+            'maxLength' => '45',
+        ),
+        'StreetName' => array(
+            'type' => 'string',
+            'required' => true,
+            'subobject' => false,
+            'comment' => 'Street Name',
+            'multivalues' => true,
+        ),
+        'BuildingName' => array(
+            'type' => 'string',
+            'required' => true,
+            'subobject' => false,
+            'comment' => 'Building Name',
+            'multivalues' => true,
+        ),
+        'StreetNumber' => array(
+            'type' => 'string',
+            'required' => true,
+            'subobject' => false,
+            'comment' => 'Street Number',
             'multivalues' => true,
         ),
         'City' => array(
@@ -98,23 +136,6 @@ class Consignee extends Base
             'subobject' => false,
             'comment' => 'ISO country name',
         ),
-        'FederalTaxId' => array(
-            'type' => '',
-            'required' => false,
-            'subobject' => false,
-        ),
-        'StateTaxId' => array(
-            'type' => '',
-            'required' => false,
-            'subobject' => false,
-        ),
-        'EORI_No' => array(
-            'type' => 'string',
-            'required' => false,
-            'subobject' => false,
-            'comment' => 'EORI number',
-            'maxLength' => '20',
-        ),
         'Contact' => array(
             'type' => 'Contact',
             'required' => false,
@@ -126,5 +147,17 @@ class Consignee extends Base
             'subobject' => true,
             'multivalues' => true,
         ),
+        'BusinessPartyTypeCode' => [
+            'type' => 'string',
+            'required' => false,
+            'subobject' => false,
+            'comment' => 'Possible Values:
+                - BU (business)
+                - DC (direct consumer)
+                - GV (government)
+                - OT (other)
+                - PR (private)
+                - RE (reseller)',
+        ],
     );
 }
