@@ -54,5 +54,12 @@ class LabelImage extends Base
             'subobject' => false,
             'comment' => 'OutputImage',
         ),
+        'MultiLabels' => array(
+            'type' => 'string',
+            'required' => false,
+            'subobject' => true,
+            'comment' => 'MultiLabels',
+            'multivalues' => true,
+        ),
     );
 }
