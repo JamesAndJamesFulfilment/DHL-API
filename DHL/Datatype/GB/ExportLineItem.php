@@ -110,6 +110,11 @@ class ExportLineItem extends Base
             'minInclusive'   => '0.000',
             'totalDigits'    => '10',
         ],
+        'GrossWeight' => [
+            'type'      => 'GrossWeight',
+            'required'  => true,
+            'subobject' => false,
+        ],
         'License' => array(
             'type' => '',
             'required' => false,
