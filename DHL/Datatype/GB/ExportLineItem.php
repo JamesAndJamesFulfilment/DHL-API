@@ -141,7 +141,14 @@ class ExportLineItem extends Base
             'comment' => 'ISO country name',
             'maxLength' => '35',
         ),
-
+        'ImportTaxManagedOutsideDhlExpress' => array(
+            'type' => 'ImportTaxManagedOutsideDhlExpress',
+            'required' => false,
+            'subobject' => false,
+            'comment' => 'Whether or not particular Export Line Item has its GST collected (OSP)',
+            'length' => '1',
+            'enumeration' => 'Y,N',
+        ),
         'AdditionalInformation' => array(
             'type' => 'AdditionalInformationType',
             'required' => false,
