@@ -255,6 +255,11 @@ class ExportDeclaration extends Base
             'required' => false,
             'subobject' => false,
         ),
+        'PayerGSTVAT' => array(
+            'type' => 'PayerGSTVAT',
+            'required' => false,
+            'subobject' => false,
+        ),
         'ReceiverReference' => array(
             'type' => 'ReceiverReference',
             'required' => false,
