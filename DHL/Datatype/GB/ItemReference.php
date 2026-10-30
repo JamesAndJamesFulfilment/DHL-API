@@ -47,7 +47,7 @@ class ItemReference extends Base
             'subobject' => false,
             'minLength' => '2',
             'maxLength' => '3',
-            'enumeration' => 'AAJ,ABW,AFE,ALX,BRD,DGC,INB,MAK,PAN,PON,SE,SON,OID,DTC,DTM,DTQ,DTR,ITR,MID,OED,OET,OOR,SME,USM,AAM,CFR,DOM,FOR,USG,MAT,NLR',
+            'enumeration' => 'AAJ,ABW,AFE,ALX,BRD,DGC,INB,MAK,MF,PAN,PON,SE,SON,OID,DTC,DTM,DTQ,DTR,ITR,MID,OED,OET,OOR,SME,SRV,USM,AAM,CFR,DOM,FOR,USG,MAT,NLR',
         ),
         'ItemReferenceNumber' => array(
             'type' => 'ItemReferenceNumber',
